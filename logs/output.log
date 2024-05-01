@@ -1,0 +1,3 @@
+2024-05-01 21:45:17,093 - dev - INFO - setting user first and last name as Daniel Johnson
+2024-05-01 21:45:17,093 - dev - INFO - Hitting create people API
+2024-05-01 21:45:17,100 - dev - INFO - checking http status code for create people API response

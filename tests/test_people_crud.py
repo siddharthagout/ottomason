@@ -3,12 +3,18 @@ from api import endpoints
 import pytest
 import json
 from utils import user_ops
+import logging
+import logging.config
+
+logging.config.fileConfig(fname='../logging.ini', disable_existing_loggers=False)
+logger = logging.getLogger("dev")
 
 
 apc = APIClient()
 
 @pytest.fixture
 def get_api_response():
+    logger.info("Hitting GET people API for fetching the response")
     url = endpoints.PEOPLE_ENDPOINT
     response = apc.get(url)
     return response
@@ -17,15 +23,23 @@ def get_api_response():
 def create_people_request():
     user = user_ops.generate_random_name()
 
-    with open("../test_data/people.json", "r") as people:
-        json_obj = json.loads(people.read())
-    json_obj['fname'] = user[0]
-    json_obj['lname'] = user[1]
+    try:
+        with open("../test_data/people.json", "r") as people:
+            json_obj = json.loads(people.read())
+        
+        
+        json_obj['fname'] = user[0]
+        json_obj['lname'] = user[1]
+        logger.info("setting user first and last name as {} {}".format(json_obj['fname'],json_obj['lname']))
 
-    return json_obj
+        return json_obj
+    except:
+        logger.error("People request json missing from location")
+
 
 @pytest.fixture
 def create_poeople(create_people_request):
+    logger.info("Hitting create people API")
     url = endpoints.PEOPLE_ENDPOINT
     response = apc.post(url, json=create_people_request)
     return response
@@ -74,4 +88,5 @@ def test_people_api_check_timestamp(get_api_response):
 @pytest.mark.create_people_sanity
 def test_create_people_status_code(create_poeople):
     response = create_poeople
+    logger.info("checking http status code for create people API response")
     assert response.status_code == 201, "HTTP status code 201 not matched"
