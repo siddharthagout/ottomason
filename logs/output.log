@@ -1,3 +1,11 @@
-2024-05-01 21:45:17,093 - dev - INFO - setting user first and last name as Daniel Johnson
-2024-05-01 21:45:17,093 - dev - INFO - Hitting create people API
-2024-05-01 21:45:17,100 - dev - INFO - checking http status code for create people API response
+2024-05-01 22:10:57,853 - tests.test_people_crud - INFO - checking http status code for create people API response
+2024-05-01 22:11:05,238 - tests.test_activities_ops - INFO - reading create_activity_payload.json payload data
+2024-05-01 22:11:05,983 - tests.test_activities_ops - INFO - checking status code for activity success
+2024-05-01 22:11:05,985 - tests.test_activities_ops - INFO - reading create_activity_payload.json payload data
+2024-05-01 22:11:06,682 - tests.test_activities_ops - INFO - checking activity status as completed or not
+2024-05-01 22:11:06,687 - tests.test_currency_operations - INFO - Checking chartname from bitcoin response
+2024-05-01 22:11:06,744 - tests.test_exception_handling - INFO - checking URL from headers
+2024-05-01 22:11:06,746 - tests.test_people_crud - INFO - Hitting GET people API for fetching the response
+2024-05-01 22:11:06,759 - tests.test_people_crud - INFO - setting user first and last name as Arnold Vazquez
+2024-05-01 22:11:06,759 - tests.test_people_crud - INFO - Hitting create people API
+2024-05-01 22:11:06,765 - tests.test_people_crud - INFO - checking http status code for create people API response

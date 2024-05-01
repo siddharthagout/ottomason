@@ -7,19 +7,19 @@ import logging
 import logging.config
 
 logging.config.fileConfig(fname='../logging.ini', disable_existing_loggers=False)
-logger = logging.getLogger("dev")
+logger = logging.getLogger(__name__)
 
 
 apc = APIClient()
 
-@pytest.fixture
+@pytest.fixture(scope="module")
 def get_api_response():
     logger.info("Hitting GET people API for fetching the response")
     url = endpoints.PEOPLE_ENDPOINT
     response = apc.get(url)
     return response
 
-@pytest.fixture
+@pytest.fixture(scope="module")
 def create_people_request():
     user = user_ops.generate_random_name()
 
@@ -37,7 +37,7 @@ def create_people_request():
         logger.error("People request json missing from location")
 
 
-@pytest.fixture
+@pytest.fixture(scope="module")
 def create_poeople(create_people_request):
     logger.info("Hitting create people API")
     url = endpoints.PEOPLE_ENDPOINT
