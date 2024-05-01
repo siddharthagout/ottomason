@@ -1,0 +1,2 @@
+[32mINFO    [0m tests.test_people_crud:test_people_crud.py:17 Hitting GET people API for fetching the response
+[32mINFO    [0m tests.test_people_crud:test_people_crud.py:49 started executing the testcases

@@ -1,0 +1,1 @@
+[32mINFO    [0m tests.test_exception_handling:test_exception_handling.py:23 checking URL from headers

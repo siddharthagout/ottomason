@@ -21,7 +21,7 @@ def test_get_response():
     json_obj = response.json()
     url = json.loads(response.headers["Report-To"])["endpoints"][0]["url"]
     logger.info("checking URL from headers")
-    assert url != "", "Valid url is fetched from headers"
+    assert url == "", "Valid url is fetched from headers"
     
 
     # try:

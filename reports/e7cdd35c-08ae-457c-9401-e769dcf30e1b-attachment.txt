@@ -1,0 +1,4 @@
+[32mINFO    [0m tests.test_people_crud:test_people_crud.py:33 setting user first and last name as Maryanna Groves
+[32mINFO    [0m tests.test_people_crud:test_people_crud.py:42 Hitting create people API
+[32mINFO    [0m tests.test_people_crud:test_people_crud.py:98 checking http status code for create people API response
+[32mINFO    [0m tests.test_people_crud:test_people_crud.py:51 finished executing the testcases.

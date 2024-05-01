@@ -1,0 +1,1 @@
+[32mINFO    [0m tests.test_currency_operations:test_currency_operations.py:23 Checking chartname from bitcoin response

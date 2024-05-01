@@ -44,9 +44,16 @@ def create_poeople(create_people_request):
     response = apc.post(url, json=create_people_request)
     return response
 
+@pytest.fixture(scope="module")
+def start_stop():
+    logger.info("started executing the testcases")
+    yield
+    logger.info("finished executing the testcases.")
+
+
 
 @pytest.mark.people_sanity
-def test_people_api_status_code(get_api_response):
+def test_people_api_status_code(get_api_response,start_stop):
     response = get_api_response
     assert response.status_code == 200, "HTTP status not matched"
 
@@ -86,7 +93,7 @@ def test_people_api_check_timestamp(get_api_response):
     assert len(timestamp_list) >= 3, "Expected timestamp count 3 is not matched"
 
 @pytest.mark.create_people_sanity
-def test_create_people_status_code(create_poeople):
+def test_create_people_status_code(create_poeople,start_stop):
     response = create_poeople
     logger.info("checking http status code for create people API response")
-    assert response.status_code == 201, "HTTP status code 201 not matched"
+    assert response.status_code == 200, "HTTP status code 201 not matched"

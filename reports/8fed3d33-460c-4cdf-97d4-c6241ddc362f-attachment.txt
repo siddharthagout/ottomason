@@ -1,0 +1,2 @@
+[32mINFO    [0m tests.test_activities_ops:test_activities_ops.py:17 reading create_activity_payload.json payload data
+[32mINFO    [0m tests.test_activities_ops:test_activities_ops.py:55 checking activity status as completed or not
